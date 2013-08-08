@@ -1,0 +1,63 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".NearAddrNearAddrActivity" >
+
+    <EditText
+        android:id="@+id/streetAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/enterStreetAddress"
+        android:layout_marginTop="32dp"       
+        android:ems="10" >
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/city"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/streetAddress"
+        android:layout_alignLeft="@+id/streetAddress"
+        android:layout_centerHorizontal="true"
+        
+        android:hint="@string/city" />
+
+    <EditText
+        android:id="@+id/state"
+        android:layout_below="@+id/streetAddress"
+        android:layout_toRightOf="@+id/city"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:hint="@string/state" 
+         />
+
+     <EditText
+        android:id="@+id/zipCode"
+        android:layout_below="@+id/streetAddress"
+        android:layout_alignRight="@+id/streetAddress"
+       
+        
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+     
+        android:hint="@string/zipCode" 
+         />
+     
+       <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/zipCode"
+        android:layout_alignRight="@+id/zipCode" 
+        android:layout_marginTop="10dip"
+        android:text="@string/findNearMe" />
+</RelativeLayout>

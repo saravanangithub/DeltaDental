@@ -1,0 +1,126 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <TableLayout
+        style="@style/standardTableLayout"
+        android:layout_marginTop="20dip" >
+ "
+
+        <TableRow style="@style/standardTableRow" >
+
+            <TextView
+                style="@style/standardTextView"
+                android:layout_weight="2"
+                android:text="@string/memberId" />
+
+            <EditText
+                android:id="@+id/edtTxtMemberId"
+                style="@style/standardEditText"
+                android:layout_weight="2" />
+
+            <TextView
+                style="@style/invisibleTextView"
+                android:layout_weight="1" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow2"
+            style="@style/standardTableRow"
+            android:layout_marginBottom="0dip" 
+            android:gravity="center">
+
+            <TextView
+                style="@style/standardTextView"
+                android:layout_weight="2"
+                android:text="@string/dob" 
+                />
+
+            <TextView
+                android:id="@+id/txtVwDate"
+                style="@style/standardTextView"
+                android:layout_weight="2"  
+                android:gravity="center" >
+                <requestFocus />
+            </TextView>
+
+            <ImageButton
+                android:id="@+id/btnDate"
+                android:layout_width="0dip"
+                android:layout_weight="1" 
+                android:layout_height="wrap_content" 
+                android:contentDescription="@string/date"
+                android:src="@drawable/calendar" />
+        </TableRow>
+
+        <TableRow android:layout_marginTop="0dip"  
+                  style="@style/standardTableRow" >
+
+            <TextView
+                style="@style/standardTextView"
+                android:layout_weight="2"
+                android:text="@string/ssn" /> 
+
+            <EditText
+                android:id="@+id/edtTxtSsn"
+                style="@style/standardEditText"
+                android:layout_weight="2" />
+
+            <TextView
+                style="@style/invisibleTextView"
+                android:layout_weight="1" />
+        </TableRow>
+
+        <TableRow style="@style/standardTableRow" >
+
+            <TextView
+                style="@style/standardTextView"
+                android:layout_weight="2"
+                android:text="@string/password" />
+
+            <EditText
+                android:id="@+id/edtTxtPassword"
+                style="@style/standardEditText"
+                android:layout_weight="2"
+                android:inputType="textPassword" />
+
+            <TextView
+                style="@style/invisibleTextView"
+                android:layout_weight="1" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                style="@style/standardTextView"
+                android:layout_weight="2"
+                android:text="@string/txtVwConPassword" />
+
+            <EditText
+                android:id="@+id/edtTxtConPassword"
+                style="@style/standardEditText"
+                android:layout_weight="2"
+                android:inputType="textPassword" />
+
+            <TextView
+                style="@style/invisibleTextView"
+                android:layout_weight="1" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center" >
+
+            <Button
+                android:id="@+id/btnRegister"
+                style="@style/standardButton"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="10dip"
+                android:text="@string/register" />
+        </TableRow>
+    </TableLayout>
+
+</ScrollView>

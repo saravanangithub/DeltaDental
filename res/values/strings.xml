@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">DeltaDental</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="signin">SIGNIN</string>
+    <string name="login">Login</string>
+    <string name="logo">Logo</string>
+    <string name="register">Register</string>
+    <string name="no_account">No Account ?</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_register">RegisterActivity</string>
+    <string name="memberId">MemberId</string>
+    <string name="password">Password</string>
+    <string name="dob">DOB</string>
+    <string name="ssn">SSN</string>
+    <string name="txtVwConPassword">Confirm Password</string>
+    <string name="date">Date</string>
+    <string name="logIntoYourAccount">Login To Your Account</string>
+    <string name="title_activity_delta_dental_home">DeltaDentalHomeActivity</string>
+    <string name="delta_dental_home">Welcome To Delta Dental Home</string>
+    <string name="title_activity_base">BaseActivity</string>
+    <string name="title_activity_find_dentist">FindDentistActivity</string>
+    <string name="title_activity_near_me_current_loc">NearMeCurrentLocActivity</string>
+    <string name="title_activity_near_me_near_addr">NearMeNearAddrActivity</string>
+    <string name="title_activity_near_addr_current_loc_fragment">NearAddrCurrentLocFragment</string>
+    <string name="title_activity_near_addr_near_addr">NearAddrNearAddrActivity</string>
+    <string name="fiveMiles">5 Miles</string>
+    <string name="tenMiles">10 Miles</string>
+    <string name="fifteenMiles">15 Miles</string>
+    <string name="findNearMe">Find Near Me</string>
+    <string name="findNearTheAddress">Find Near The Address</string>
+    <string name="enterStreetAddress">Enter Street Address</string>
+    <string name="city">City</string>
+    <string name="state">State</string>
+    <string name="zipCode">Zipcode</string>
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">close</string>
+    <string name="title_activity_find_dentist_near_me">FindDentistNearMeActivity</string>
+
+</resources>
