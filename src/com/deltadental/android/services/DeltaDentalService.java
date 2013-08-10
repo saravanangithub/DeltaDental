@@ -11,11 +11,13 @@ import com.deltadental.android.commons.Closure;
 import com.deltadental.android.models.DeltaDentalResponse;
 import com.deltadental.android.models.MemPersonalInfo;
 import com.deltadental.android.utils.DateTimeUtils;
+import com.parse.FindCallback;
 import com.parse.GetCallback;
 import com.parse.LogInCallback;
 import com.parse.Parse;
 import com.parse.ParseAnalytics;
 import com.parse.ParseException;
+import com.parse.ParseGeoPoint;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
@@ -131,6 +133,78 @@ public class DeltaDentalService
     
   }
   
+  public void getProvidersByNearMeCurrentLoc(final Context context,ParseGeoPoint lastKownGeoPoint,final int distance,final Closure<DeltaDentalResponse> successClosure,final Closure<DeltaDentalResponse> errorClosure)
+  {
+	  ParseQuery<ParseObject> query = ParseQuery.getQuery("Provider");
+	  query.whereWithinMiles("GeoPoint", lastKownGeoPoint,distance);
+	  
+	  query.setLimit(10); 
+	  query.findInBackground(new FindCallback<ParseObject>() {
+
+		@Override
+		public void done(List<ParseObject> providersList, ParseException ex) {
+			// TODO Auto-generated method stub
+			if(ex == null)
+			{
+			  DeltaDentalResponse deltaDentalResponse=new DeltaDentalResponse();
+			  deltaDentalResponse.setProviderAddressList(providersList);
+			  for(ParseObject parseObject:providersList)
+			  {
+			      			 
+			  Toast.makeText(context, parseObject.getString("FirstName"), Toast.LENGTH_SHORT).show();
+			  }
+			  successClosure.invoke(deltaDentalResponse);
+			  }
+		}  });
+  }
+  
+  public void getProvidersByNearAddrNearAddr(final Context context,ParseGeoPoint lastKownGeoPoint,final Closure<DeltaDentalResponse> successClosure,final Closure<DeltaDentalResponse> errorClosure)
+  {
+	  ParseQuery<ParseObject> query = ParseQuery.getQuery("Provider");
+	  query.whereWithinMiles("GeoPoint", lastKownGeoPoint, 2);
+	  
+	  query.setLimit(10); 
+	  query.findInBackground(new FindCallback<ParseObject>() {
+
+		@Override
+		public void done(List<ParseObject> providersList, ParseException ex) {
+			// TODO Auto-generated method stub
+			if(ex == null)
+			{
+			  ParseObject parseObject=providersList.get(0); 
+			  DeltaDentalResponse deltaDentalResponse=new DeltaDentalResponse();
+			  deltaDentalResponse.setProviderAddressList(providersList);
+			  successClosure.invoke(deltaDentalResponse);
+			 
+			  Toast.makeText(context, parseObject.getString("FirstName"), Toast.LENGTH_SHORT).show();
+			}
+		}  });
+  }
+  
+  public void getProvidersByNearAddrCurrentLocation(final Context context,ParseGeoPoint lastKownGeoPoint,final Closure<DeltaDentalResponse> successClosure,final Closure<DeltaDentalResponse> errorClosure)
+  {
+	  ParseQuery<ParseObject> query = ParseQuery.getQuery("Provider");
+	  query.whereWithinMiles("GeoPoint", lastKownGeoPoint, 2);
+	 
+	  query.setLimit(10); 
+	  query.findInBackground(new FindCallback<ParseObject>() {
+
+		@Override
+		public void done(List<ParseObject> providersList, ParseException ex) {
+			// TODO Auto-generated method stub
+			if(ex == null)
+			{
+			  ParseObject parseObject=providersList.get(0); 
+			 
+			  Toast.makeText(context, parseObject.getString("FirstName"), Toast.LENGTH_SHORT).show();
+			  
+			  DeltaDentalResponse deltaDentalResponse=new DeltaDentalResponse();
+			  deltaDentalResponse.setProviderAddressList(providersList);
+			  successClosure.invoke(deltaDentalResponse);
+			  
+			}
+		}  });
+  }
   public static DeltaDentalService getInstance(Context context,Intent intent)
   {
     if(instance == null)

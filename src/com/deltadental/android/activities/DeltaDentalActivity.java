@@ -8,6 +8,7 @@ import com.deltadental.android.R.menu;
 import com.deltadental.android.commons.Closure;
 import com.deltadental.android.models.DeltaDentalResponse;
 import com.deltadental.android.services.DeltaDentalService;
+import com.deltadental.android.services.LocationService;
 import com.deltadental.android.utils.KDialog;
 
 import android.os.Bundle;
@@ -36,6 +37,7 @@ public class DeltaDentalActivity extends SherlockActivity {
 		edtTxtpassword=(EditText)findViewById(R.id.edtTxtPasswordLogin);
 		btnLogin=(Button)findViewById(R.id.btnLogin);
 		deltaDentalService=DeltaDentalService.getInstance(this,getIntent());
+		LocationService.getInstance(this); 
 		btnLogin.setOnClickListener(new OnClickListener() 
 		{ 
 		  

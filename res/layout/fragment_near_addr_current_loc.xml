@@ -33,17 +33,29 @@
             android:id="@+id/radio2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/fifteenMiles" />
+            android:text="@string/fifteenMiles" /> 
     </RadioGroup> -->
 <!-- android:layout_below="@+id/radioGroup1"
         android:layout_alignRight="@+id/radioGroup1" -->
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/btnNearAddrCurrentLoc"
         android:layout_width="wrap_content" 
         android:layout_height="wrap_content"
        
         android:layout_centerHorizontal="true" 
         android:layout_marginTop="10dip"
         android:text="@string/findNearTheAddress" />
+    
+     <ListView
+        android:id="@+id/listVwNearAddrCurrentLoc"  
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@drawable/slidingmenu_shadow"
+        android:choiceMode="singleChoice"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="10dp"  
+        android:layout_below="@+id/btnNearAddrCurrentLoc" 
+        />  
 
 </RelativeLayout>

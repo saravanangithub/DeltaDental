@@ -10,6 +10,10 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
         android:allowBackup="true"
@@ -67,6 +71,14 @@
         <activity
             android:name="com.deltadental.android.activities.FindDentistNearMeActivity"
             android:label="@string/title_activity_find_dentist_near_me" >
+        </activity>
+        <activity
+            android:name="com.deltadental.android.activities.ProvidersListActivity"
+            android:label="@string/title_activity_providers_list" >
+        </activity>
+        <activity
+            android:name="com.deltadental.android.ProviderListActivity"
+            android:label="@string/title_activity_provider_list" >
         </activity>
     </application>
 

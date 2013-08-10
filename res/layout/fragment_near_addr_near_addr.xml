@@ -40,7 +40,7 @@
          />
 
      <EditText
-        android:id="@+id/zipCode"
+        android:id="@+id/zipCodeNearAddrNearAddr"
         android:layout_below="@+id/streetAddress"
         android:layout_alignRight="@+id/streetAddress"
        
@@ -53,11 +53,24 @@
          />
      
        <Button
-        android:id="@+id/button1"
+        android:id="@+id/btnNearAddrNearAddr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/zipCode"
-        android:layout_alignRight="@+id/zipCode" 
+        android:layout_below="@+id/zipCodeNearAddrNearAddr"
+        android:layout_alignRight="@+id/zipCodeNearAddrNearAddr"   
         android:layout_marginTop="10dip"
         android:text="@string/findNearTheAddress" />
+       
+        <ListView
+        android:id="@+id/listVwNearAddrNearAddr"  
+        android:layout_width="match_parent" 
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@drawable/slidingmenu_shadow" 
+        android:choiceMode="singleChoice"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="10dp" 
+        android:layout_below="@+id/btnNearAddrNearAddr"  
+        />
+       
 </RelativeLayout>

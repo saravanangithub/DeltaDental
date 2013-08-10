@@ -9,7 +9,7 @@
     tools:context=".NearAddrCurrentLocFragment" >
 
       <RadioGroup
-        android:id="@+id/radioGroup1"
+        android:id="@+id/radGroupNearMeCurrentLoc" 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -17,33 +17,47 @@
         android:layout_marginTop="50dp" >
 
         <RadioButton
-            android:id="@+id/radio0"
+            android:id="@+id/radio1NearMeCurrentLoc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="true"
             android:text="@string/fiveMiles" />
 
         <RadioButton
-            android:id="@+id/radio1"
+            android:id="@+id/radio2NearMeCurrentLoc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/tenMiles" />
 
-        <RadioButton
-            android:id="@+id/radio2"
+       
+        
+            <RadioButton
+            android:id="@+id/radio4NearMeCurrentLoc" 
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/fifteenMiles" />
-    </RadioGroup>
+            android:text="@string/twnentyMiles" />              
+    </RadioGroup> 
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/btnNearMeCurrentLoc" 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/radioGroup1"
-        android:layout_alignRight="@+id/radioGroup1"
+        android:layout_below="@+id/radGroupNearMeCurrentLoc"
+        android:layout_alignRight="@+id/radGroupNearMeCurrentLoc" 
         android:layout_centerHorizontal="true" 
         android:layout_marginTop="10dip"
         android:text="@string/findNearMe" />
+   
+     <ListView
+        android:id="@+id/listVwNearMeCurrentLoc"   
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@drawable/slidingmenu_shadow"  
+        android:choiceMode="singleChoice"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="10dp" 
+        android:layout_below="@+id/btnNearMeCurrentLoc"   
+        />
 
 </RelativeLayout>

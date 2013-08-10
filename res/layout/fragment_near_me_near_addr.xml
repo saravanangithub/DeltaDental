@@ -38,9 +38,9 @@
 
         android:hint="@string/state" 
          />
-
+ 
      <EditText
-        android:id="@+id/zipCode"
+        android:id="@+id/edtTxtZipCodeNearMeNearAddr" 
         android:layout_below="@+id/streetAddress"
         android:layout_alignRight="@+id/streetAddress"
        
@@ -52,12 +52,55 @@
         android:hint="@string/zipCode" 
          />
      
-       <Button
-        android:id="@+id/button1"
+        <RadioGroup
+        android:id="@+id/radGroupNearMeNearAddr" 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/zipCode"
-        android:layout_alignRight="@+id/zipCode" 
+        android:layout_below="@+id/edtTxtZipCodeNearMeNearAddr"  
+        android:orientation="horizontal"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp" >
+
+        <RadioButton
+            android:id="@+id/radio1NearMeNearAddr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/fiveMiles" />
+
+        <RadioButton
+            android:id="@+id/radio2NearMeNearAddr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tenMiles" />
+
+       
+        
+            <RadioButton
+            android:id="@+id/radio4NearMeNearAddr"  
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/twnentyMiles" />              
+    </RadioGroup> 
+     
+       <Button
+        android:id="@+id/btnNearMeNearAddr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/radGroupNearMeNearAddr"
+        android:layout_alignRight="@+id/radGroupNearMeNearAddr"  
         android:layout_marginTop="10dip"
         android:text="@string/findNearMe" />
+       
+       <ListView
+        android:id="@+id/listVwNearMeNearAddr"   
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@drawable/slidingmenu_shadow"
+        android:choiceMode="singleChoice"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="10dp" 
+        android:layout_below="@+id/btnNearMeNearAddr"    
+        />
 </RelativeLayout>

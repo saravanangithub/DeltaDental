@@ -29,6 +29,7 @@
     <string name="fiveMiles">5 Miles</string>
     <string name="tenMiles">10 Miles</string>
     <string name="fifteenMiles">15 Miles</string>
+    <string name="twnentyMiles">20 Miles</string>
     <string name="findNearMe">Find Near Me</string>
     <string name="findNearTheAddress">Find Near The Address</string>
     <string name="enterStreetAddress">Enter Street Address</string>
@@ -38,5 +39,14 @@
     <string name="drawer_open">Open</string>
     <string name="drawer_close">close</string>
     <string name="title_activity_find_dentist_near_me">FindDentistNearMeActivity</string>
-
+    <string name="title_activity_providers_list">ProvidersListActivity</string>
+    <string name="title_activity_provider_list">Provider List</string> 
+    <string name="first_name">FirstName  </string>
+    <string name="last_name">LastName  </string>
+    <string name="phone">Phone  </string>
+    <string name="fax">Fax  </string>
+    <string name="speciality">Speciality  </string>
+    <string name="address">Address  </string>
+    <string name="zipCode">ZipCode  </string>
+   
 </resources>
