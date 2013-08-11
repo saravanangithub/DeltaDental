@@ -1,6 +1,9 @@
 package com.deltadental.android.services;
 
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
+import java.util.Date;
 import java.util.List;
 
 import android.content.Context;
@@ -45,7 +48,35 @@ public class DeltaDentalService
 	    if (user != null) 
 	    {
 		  deltaDentalResponse.setMessage("Login Success"); 
-		  successClosure.invoke(deltaDentalResponse);
+		  
+		  ParseUser currentUser = ParseUser.getCurrentUser();
+			 
+			Toast.makeText(context,
+					"current user" + currentUser.getString("username"),
+					Toast.LENGTH_SHORT).show();
+			ParseQuery<ParseObject> parseQuery=ParseQuery.getQuery("MemPersonalInfo");
+			parseQuery.whereEqualTo("MemberId",Integer.parseInt(currentUser.getString("username") ));
+			 parseQuery.findInBackground(new FindCallback<ParseObject>() {
+
+					@Override
+					public void done(List<ParseObject> providersList, ParseException ex) {
+						// TODO Auto-generated method stub
+						if(ex == null)
+						{
+						  ParseObject parseObject=providersList.get(0);
+						 String userName=parseObject.getString("FirstName")+" "+parseObject.getString("LastName");
+						 
+						 Toast.makeText(context,"thread"+Thread.currentThread().getName(), Toast.LENGTH_SHORT).show(); 
+						 DeltaDentalResponse deltaDentalResponse=new DeltaDentalResponse();
+						 deltaDentalResponse.setUserName(userName); 
+						 
+							Toast.makeText(context,
+									"user name" + userName, 
+									Toast.LENGTH_SHORT).show();
+						 successClosure.invoke(deltaDentalResponse);
+						}
+					}  });
+		 // successClosure.invoke(deltaDentalResponse);
 		  /*ParseQuery<ParseObject> query = ParseQuery.getQuery("MemPersonalInfo");
 		  query.whereEqualTo("MemeberId", Integer.parseInt(userName));
 		  query.findInBackground(new FindCallback<ParseObject>()
@@ -204,6 +235,69 @@ public class DeltaDentalService
 			  
 			}
 		}  });
+  }
+  
+  
+  public void getLastVist(final Closure<DeltaDentalResponse> successClosure,final Closure<DeltaDentalResponse> errorClosure)
+  {
+	  ParseQuery<ParseObject> query=ParseQuery.getQuery("Claims");
+	  query.whereEqualTo("MemberId","96457");
+	  
+	
+	  query.findInBackground(new FindCallback<ParseObject>() {
+
+		@Override
+		public void done(List<ParseObject> claimsList, ParseException ex) {
+			// TODO Auto-generated method stub
+			if(ex==null) {
+				ArrayList<Date> dates=new ArrayList<Date>();  
+				int claimedAmount=0;
+				for(ParseObject claim:claimsList)
+				{
+					claimedAmount+=claim.getInt("CoveredCost");  
+					dates.add(claim.getDate("DateOfVisit"));
+				}
+				Date date=Collections.max(dates); 							
+				ParseObject latestClaim=null;
+				Date dupDate=null;
+				for(ParseObject claim:claimsList)
+				{
+					dupDate=claim.getDate("DateOfVisit");
+					if(dupDate.equals(date))
+					{
+						latestClaim=claim; 
+						break;
+					}
+					//dates=new ArrayList<Date>(); 
+					//dates.add(claim.getDate("DateOfVisit")); 
+				}
+				final DeltaDentalResponse deltaDentalResponse=new DeltaDentalResponse();
+				deltaDentalResponse.setClaimInfo(latestClaim);
+				deltaDentalResponse.setClaimedAmount(claimedAmount);
+				 ParseQuery<ParseObject> benefitsQuery=ParseQuery.getQuery("Benefits");
+				  benefitsQuery.whereEqualTo("MemberID","96457"); 
+				  benefitsQuery.findInBackground(new FindCallback<ParseObject>() {
+ 
+					@Override
+					public void done(List<ParseObject> parseObject, ParseException ex) {
+						// TODO Auto-generated method stub
+						//Toast.makeText(context, ex.getMessage(), Toast.LENGTH_SHORT).show();
+						deltaDentalResponse.setTotalAmount(parseObject.get(0).getInt("AllowedAmount")); 
+						successClosure.invoke(deltaDentalResponse);   
+					}
+				});
+				  
+				
+				int index=dates.indexOf(date);   
+				//ParseObject parseObject=claimsList.get(index); 
+				//ParseObject lastClaim=claimsList.get(0);
+				//Toast.makeText(context, "last claim"+date, Toast.LENGTH_SHORT).show(); 
+				//Toast.makeText(context, index +"  "+latestClaim.getString("ServiceReceived"), Toast.LENGTH_SHORT).show(); 
+			}
+				
+				
+		}
+	});
   }
   public static DeltaDentalService getInstance(Context context,Intent intent)
   {

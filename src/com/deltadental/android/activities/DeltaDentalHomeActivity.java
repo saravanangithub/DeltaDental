@@ -4,62 +4,101 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Locale;
 
+import android.content.Intent;
 import android.location.Address;
 import android.location.Geocoder;
 import android.os.Bundle;
-import android.widget.Toast; 
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 import com.deltadental.android.R;
+import com.deltadental.android.adapters.ProviderListAdapter;
+import com.deltadental.android.commons.Closure;
+import com.deltadental.android.exception.LocationException;
+import com.deltadental.android.models.DeltaDentalResponse;
+import com.deltadental.android.services.DeltaDentalService;
+import com.deltadental.android.services.LocationService;
 import com.parse.LocationCallback;
 import com.parse.ParseGeoPoint;
 import com.parse.ParseInstallation;
+import com.parse.ParseObject;
 import com.parse.ParseUser;
 import com.parse.PushService;
 
 public class DeltaDentalHomeActivity extends BaseActivity {
 
-	private static final long TIME_OUT = 7000; 
-	ParseGeoPoint lastKnownGeopoint;
+	
+	
+	private LocationService locationService;
+	private DeltaDentalService deltaDentalService;
+	private TextView txtVwWelcome;
+	private Button btnRecentActivity;
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 
-		
-		super.onCreate(savedInstanceState); 
-		  //PushService.subscribe(this, "user_" + ParseUser.getCurrentUser().getObjectId(), this);
-		  /*  ParseInstallation currentInstallation = ParseInstallation.getCurrentInstallation();
-		    Toast.makeText(getApplicationContext(), ParseUser.getCurrentUser()+"",Toast.LENGTH_SHORT).show();
-		    currentInstallation.put("user", ParseUser.getCurrentUser());
-		    currentInstallation.saveInBackground();  */ 
+		super.onCreate(savedInstanceState);
+ 
 		setContentView(R.layout.activity_delta_dental_home);
-		 ParseGeoPoint.getCurrentLocationInBackground(TIME_OUT, new OnGetLocationCallback()); 
+		
+		txtVwWelcome=(TextView)findViewById(R.id.welcome);
+		 txtVwWelcome.setText("Welcome "+ getIntent().getStringExtra("userName"));
+		btnRecentActivity=(Button)findViewById(R.id.btnRecentActivity);
+		 
+		   
+		locationService=LocationService.getInstance(this);
+		deltaDentalService=DeltaDentalService.getInstance(this,getIntent());
+		try {
+			locationService.getLocation();
+		} catch (LocationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace(); 
+		}
+		
+		btnRecentActivity.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				deltaDentalService.getLastVist(new GetLastVisitSuccess(), new GetLastVisitFailure());
+			}
+		});
+		
 	}
-	 private class OnGetLocationCallback extends LocationCallback
-	  {
-	   
+
+	private class GetLastVisitSuccess extends Closure<DeltaDentalResponse>
+	{
 
 		@Override
-		public void done(ParseGeoPoint parseGeoPoint, com.parse.ParseException e) {
+		public void invoke(DeltaDentalResponse response) {
 			// TODO Auto-generated method stub
-			if(e == null || e.getMessage().isEmpty()) 
-		      {
-				Geocoder geocoder=new Geocoder(getBaseContext(),Locale.getDefault());
-		    	  List<Address> addresses=null;
-		    	  lastKnownGeopoint = parseGeoPoint;
-		        try {
-					addresses=geocoder.getFromLocation(lastKnownGeopoint.getLatitude(),lastKnownGeopoint.getLongitude(), 5);
-				} catch (IOException e1) { 
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}     
-			    Toast.makeText(DeltaDentalHomeActivity.this,addresses.get(0).getAddressLine(0), Toast.LENGTH_SHORT).show();
-			    Toast.makeText(DeltaDentalHomeActivity.this,addresses.get(0).getAddressLine(1), Toast.LENGTH_SHORT).show();
-			    Toast.makeText(DeltaDentalHomeActivity.this,addresses.get(0).getAddressLine(2), Toast.LENGTH_SHORT).show();
-		      }
-			else 
-			{
-				e.printStackTrace();
-				Toast.makeText(DeltaDentalHomeActivity.this, e.getMessage()+parseGeoPoint+ " hhhhjjjjjjj", Toast.LENGTH_SHORT).show();
-			}
+		    Intent intent=new Intent(DeltaDentalHomeActivity.this,RecentVisitActivity.class);
+		    ParseObject lastClaim=response.getClaimInfo();
+		    intent.putExtra("patientName",lastClaim.getString("PatientName") );
+		    intent.putExtra("dentistName",lastClaim.getString("DentistName") ); 
+		    intent.putExtra("coveredCost",lastClaim.getInt("CoveredCost")+"" );
+		    intent.putExtra("yourCost",lastClaim.getInt("YourCost")+"" );
+		    intent.putExtra("serviceReceived",lastClaim.getString("ServiceReceived") );
+		    intent.putExtra("dateOfVisit",lastClaim.getDate("DateOfVisit").toLocaleString() );  
+		    intent.putExtra("claimedAmount",response.getClaimedAmount());
+		    intent.putExtra("totalAmount", response.getTotalAmount());  
+		   DeltaDentalHomeActivity.this.startActivity(intent);	  	 
+		} 
+		
+	}
+	
+	private class GetLastVisitFailure extends Closure<DeltaDentalResponse> 
+	{
+
+		@Override
+		public void invoke(DeltaDentalResponse response) {
+			// TODO Auto-genlerated method stub
+		    
 		}
-	  }
+		
+	}
+
 	
 }

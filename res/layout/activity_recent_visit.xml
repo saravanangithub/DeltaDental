@@ -1,0 +1,160 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".RecentVisitActivity" >
+
+    <LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" >
+    
+       
+        <TextView  
+     android:layout_width="wrap_content" 
+    android:layout_height="wrap_content"
+     android:text="@string/patient_name"/> 
+        
+                <TextView android:id="@+id/txtVwPatientName"
+     android:layout_width="wrap_content" 
+    android:layout_height="wrap_content"
+     />
+          </LinearLayout>      
+                 <LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" >
+    
+       
+        <TextView  
+     android:layout_width="wrap_content" 
+    android:layout_height="wrap_content"
+     android:text="@string/dentist_name"/> 
+        
+                <TextView android:id="@+id/txtVwDentistName"
+     android:layout_width="wrap_content" 
+    android:layout_height="wrap_content"
+     />
+        </LinearLayout>
+        
+                  <LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" >
+    
+       
+        <TextView  
+     android:layout_width="wrap_content" 
+    android:layout_height="wrap_content"
+     android:text="@string/service_received"/> 
+        
+                <TextView android:id="@+id/txtVwServiceReceived" 
+     android:layout_width="wrap_content" 
+    android:layout_height="wrap_content"
+     />
+        </LinearLayout>
+        
+                   <LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" >
+    
+       
+        <TextView  
+     android:layout_width="wrap_content" 
+    android:layout_height="wrap_content"
+     android:text="@string/date_of_service"/>  
+        
+                <TextView android:id="@+id/txtVwDateOfService"  
+     android:layout_width="wrap_content" 
+    android:layout_height="wrap_content"
+     />
+        </LinearLayout>
+
+                  <LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" 
+    android:orientation="horizontal" >
+    
+       
+        <TextView  
+     android:layout_width="wrap_content" 
+    android:layout_height="wrap_content"
+     android:text="@string/covered_cost"/> 
+        
+                <TextView android:id="@+id/txtVwCoveredCost"  
+     android:layout_width="wrap_content" 
+    android:layout_height="wrap_content"
+     />
+        </LinearLayout>
+        
+                  <LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" >
+    
+       
+        <TextView  
+     android:layout_width="wrap_content" 
+    android:layout_height="wrap_content"
+     android:text="@string/your_cost"/>  
+        
+                <TextView android:id="@+id/txtVwYourCost"   
+     android:layout_width="wrap_content" 
+    android:layout_height="wrap_content"
+     /> 
+        </LinearLayout>
+        
+                   <LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginTop="15dip" >
+    
+       
+        <TextView  
+     android:layout_width="10dp" 
+    android:layout_height="10dp"
+    android:background="@android:color/holo_red_dark"
+     />  
+        
+                <TextView android:id="@+id/txtVwClaimedAmount"   
+     android:layout_width="wrap_content" 
+    android:layout_height="wrap_content"
+    
+     /> 
+        </LinearLayout>
+                    <LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" >
+    
+       
+        <TextView  
+     android:layout_width="10dp" 
+    android:layout_height="10dp"
+    android:background="@android:color/holo_green_dark"
+     />  
+         
+                <TextView android:id="@+id/txtVwRemainingAmount"    
+     android:layout_width="wrap_content" 
+    android:layout_height="wrap_content" 
+    
+     /> 
+        </LinearLayout>
+                  
+                   
+                  <LinearLayout 
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" 
+    android:orientation="vertical" 
+    android:id="@+id/linearLayout"> </LinearLayout>
+    
+
+</LinearLayout>
+

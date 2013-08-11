@@ -77,8 +77,8 @@
             android:label="@string/title_activity_providers_list" >
         </activity>
         <activity
-            android:name="com.deltadental.android.ProviderListActivity"
-            android:label="@string/title_activity_provider_list" >
+            android:name="com.deltadental.android.activities.RecentVisitActivity"
+            android:label="@string/title_activity_recent" >
         </activity>
     </application>
 

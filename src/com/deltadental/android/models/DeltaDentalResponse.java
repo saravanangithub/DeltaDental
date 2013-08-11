@@ -9,9 +9,47 @@ public class DeltaDentalResponse
   private String error;
   private String message; 
   private List<ParseObject> providerAddressList;
- 
+  private String userName;
+  private ParseObject claimInfo;
+  private int claimedAmount;
+  private int totalAmount;
   
-  public String getMessage() 
+   
+  
+  
+  public int getClaimedAmount() {
+	return claimedAmount;
+}
+
+public void setClaimedAmount(int claimedAmount) {
+	this.claimedAmount = claimedAmount;
+}
+
+public int getTotalAmount() {
+	return totalAmount;
+}
+
+public void setTotalAmount(int totalAmount) {
+	this.totalAmount = totalAmount;
+}
+
+public ParseObject getClaimInfo() {
+	return claimInfo;
+}
+
+public void setClaimInfo(ParseObject claimInfo) {
+	this.claimInfo = claimInfo;
+}
+
+public String getUserName() {
+	return userName;
+}
+
+public void setUserName(String userName) {
+	this.userName = userName;
+}
+
+public String getMessage() 
   {
 	return message;
   }

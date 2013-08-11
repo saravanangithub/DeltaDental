@@ -86,7 +86,10 @@ public class DeltaDentalActivity extends SherlockActivity {
 		    	
 		   KDialog.hideLoadingDialog(DeltaDentalActivity.this);
 		   Intent intent=new Intent(DeltaDentalActivity.this,com.deltadental.android.activities.DeltaDentalHomeActivity.class);
-		   startActivity(intent);
+	
+		   intent.putExtra("userName", response.getUserName());     
+		   
+		   startActivity(intent);  
 		      
 	  }
 	}
