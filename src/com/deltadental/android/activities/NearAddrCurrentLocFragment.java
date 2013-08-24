@@ -1,36 +1,25 @@
 package com.deltadental.android.activities;
 
-import java.util.List;
-
-import com.actionbarsherlock.app.SherlockFragment;
-import com.deltadental.android.R;
-import com.deltadental.android.R.layout;
-import com.deltadental.android.R.menu;
-import com.deltadental.android.adapters.ProviderListAdapter;
-import com.deltadental.android.commons.Closure;
-import com.deltadental.android.exception.LocationException;
-import com.deltadental.android.models.DeltaDentalResponse;
-import com.deltadental.android.services.DeltaDentalService;
-import com.deltadental.android.services.LocationService;
-import com.parse.ParseGeoPoint;
-import com.parse.ParseObject;
-
+import android.content.Intent;
 import android.os.Bundle;
-import android.os.Parcelable;
-import android.app.ActionBar.Tab;
-import android.app.Activity;
-import android.app.Fragment;
-import android.app.FragmentTransaction;
 import android.view.LayoutInflater;
-import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
-import android.app.ActionBar;
-import android.content.Intent;
+
+import com.actionbarsherlock.app.SherlockFragment;
+import com.deltadental.android.R;
+import com.deltadental.android.adapters.ProviderListAdapter;
+import com.deltadental.android.commons.Closure;
+import com.deltadental.android.exception.LocationException;
+import com.deltadental.android.models.DeltaDentalResponse;
+import com.deltadental.android.services.DeltaDentalService;
+import com.deltadental.android.services.LocationService;
+import com.deltadental.android.utils.KDialog;
+import com.parse.ParseGeoPoint;
 
 public class NearAddrCurrentLocFragment extends SherlockFragment  {
 	
@@ -48,11 +37,12 @@ public class NearAddrCurrentLocFragment extends SherlockFragment  {
         deltaDentalService=DeltaDentalService.getInstance(getSherlockActivity(),new Intent());
         btnNearAddrCurrentLoc.setOnClickListener(new OnClickListener(){
              @Override
-             public void onClick(View v) {
+             public void onClick(View v) { 
             	 try {
 					ParseGeoPoint parseGeoPoint=locationService.getLocation();
 					if(parseGeoPoint!=null)
 					{
+						KDialog.showLoadingDialog(getSherlockActivity(),"Processing");    
 					deltaDentalService.getProvidersByNearAddrCurrentLocation(getSherlockActivity(),parseGeoPoint,new  GetProviderSuccess(), new GetProviderFailure());
 					}
 					
@@ -74,7 +64,7 @@ public class NearAddrCurrentLocFragment extends SherlockFragment  {
 		public void invoke(DeltaDentalResponse response) {
 			// TODO Auto-generated method stub
 		   
-		
+	    KDialog.hideLoadingDialog(getSherlockActivity()); 
 		ProviderListAdapter providerListAdapter=new ProviderListAdapter(getSherlockActivity(), response.getProviderAddressList());
 		listVwProviders.setAdapter(providerListAdapter);
 			

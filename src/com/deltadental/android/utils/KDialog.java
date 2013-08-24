@@ -1,6 +1,6 @@
 package com.deltadental.android.utils;
 
-import com.deltadental.android.activities.LoginActivity;
+
 
 import android.app.Activity;
 import android.app.AlertDialog;

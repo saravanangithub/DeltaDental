@@ -13,7 +13,7 @@ import com.deltadental.android.services.DeltaDentalService;
 import com.deltadental.android.views.PieChart;
 
  
-public class RecentVisitActivity extends Activity {
+public class RecentVisitActivity extends BaseActivity {
 
 	private DeltaDentalService deltaDentalService;
 	private TextView txtVwPatientName;
@@ -29,7 +29,7 @@ public class RecentVisitActivity extends Activity {
 	float values[] = { 700, 400, 100, 500, 600 };
 	
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
+	public void onCreate(Bundle savedInstanceState) { 
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_recent_visit);
 		
@@ -62,17 +62,11 @@ public class RecentVisitActivity extends Activity {
 		values = calculateData(summaryLevel); 
 		PieChart pieChart = new PieChart(this, values);
 		lv1.addView(pieChart); 
-		deltaDentalService=DeltaDentalService.getInstance(this, getIntent());
+		
 		
 	}
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.recent, menu);
-		return true;
-	}
-	
+	 
 	private float[] calculateData(float[] data) {
 		float total = 0;
 		for (int i = 0; i < data.length; i++) {

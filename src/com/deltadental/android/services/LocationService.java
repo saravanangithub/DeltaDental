@@ -21,7 +21,7 @@ import java.util.Locale;
 
 public class LocationService
 {
-  private static final int TIME_OUT = 7000;
+  private static final int TIME_OUT = 7000; 
   private static LocationService _instance;
   private ParseGeoPoint _lastKnownGeopoint;
   //private List<LocationServiceListener> _listeners;
@@ -107,9 +107,9 @@ public class LocationService
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}      
-	    Toast.makeText(context,addresses.get(0).getAddressLine(0), Toast.LENGTH_SHORT).show();
-	    Toast.makeText(context,addresses.get(0).getAddressLine(1), Toast.LENGTH_SHORT).show();
-	    Toast.makeText(context,addresses.get(0).getAddressLine(2), Toast.LENGTH_SHORT).show();
+	    //Toast.makeText(context,addresses.get(0).getAddressLine(0), Toast.LENGTH_SHORT).show();
+	   // Toast.makeText(context,addresses.get(0).getAddressLine(1), Toast.LENGTH_SHORT).show();
+	    //Toast.makeText(context,addresses.get(0).getAddressLine(2), Toast.LENGTH_SHORT).show();
 	    //Log.d("jjj","02201"+ addresses.get(0).getAddressLine(0) + "  "+ addresses.get(0).getLatitude()+" "+addresses.get(0).getLongitude());
 	    
         //Toast.makeText(context,"kdjkw", Toast.LENGTH_SHORT).show(); 

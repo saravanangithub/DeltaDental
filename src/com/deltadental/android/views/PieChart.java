@@ -19,7 +19,7 @@ public class PieChart extends View {
 	public PieChart(Context context, float[] values) {
 		super(context);
 		this.context=context;
-		Toast.makeText(context, "i am in constructor", Toast.LENGTH_SHORT).show();  
+		   
 		value_degree = new float[values.length];
 		for (int i = 0; i < values.length; i++) {
 			value_degree[i] = values[i];
@@ -30,22 +30,24 @@ public class PieChart extends View {
 	@Override
 	protected void onDraw(Canvas canvas) {
 		super.onDraw(canvas);
-		Toast.makeText(context, "i am in onDraw", Toast.LENGTH_SHORT).show(); 
+		 
 		RectF rectf = new RectF(120, 120, 380,380);   
 		Random r; 
 		for (int i = 0; i < value_degree.length; i++) {
 			if (i == 0) {
 				r = new Random();
-				int color = Color.argb(255, 255, 0,
+				int color = Color.argb(255, 230, 0,
 						0);
-				paint.setColor(color);
-				canvas.drawArc(rectf, 0, value_degree[i], true, paint); 
+				paint.setColor(color); 
+				 
+				canvas.drawArc(rectf, 90, value_degree[i], true, paint); 
 			} else {
-				temp += value_degree[i - 1];
+				temp =90 +value_degree[i - 1];
 				r = new Random();
 				int color = Color.argb(255,0, 255,
 						0); 
 				paint.setColor(color);
+				  
 				canvas.drawArc(rectf, temp, value_degree[i], true, paint);
 			}
 		}

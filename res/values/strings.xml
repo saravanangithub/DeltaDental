@@ -41,24 +41,37 @@
     <string name="title_activity_find_dentist_near_me">FindDentistNearMeActivity</string>
     <string name="title_activity_providers_list">ProvidersListActivity</string>
     <string name="title_activity_provider_list">Provider List</string>
-    <string name="first_name">FirstName  </string>
-    <string name="last_name">LastName  </string>
-    <string name="phone">Phone  </string>
-    <string name="fax">Fax  </string>
-    <string name="speciality">Speciality  </string>
-    <string name="address">Address  </string>
-    <string name="zipCode">ZipCode  </string>
+    <string name="first_name">FirstName  :</string> 
+    <string name="last_name">LastName  :</string>
+    <string name="phone">Phone  :</string>
+    <string name="fax">Fax  :</string>
+    <string name="speciality">Speciality  :</string>
+    <string name="address">Address  :</string>
+    <string name="zipCode">ZipCode  :</string>
     <string name="delta_dental_california">Delta Dental of California</string>
     <string name="addr1">100 First st,SanFrancisco</string>
     <string name="addr2">CA 94105,USA</string>
     <string name="recent_activity">Recent Activity</string>
     <string name="welcome">Welcome </string>
     <string name="title_activity_recent">RecentActivity</string>
-    <string name="patient_name">Patient Name</string>
-    <string name="dentist_name">Dentist Name</string>
-    <string name="service_received">Service Received</string>
-    <string name="covered_cost">Covered Cost</string> 
-    <string name="your_cost">Your Cost</string>
-    <string name="date_of_service">Date Of Service</string> 
-
+    <string name="patient_name">Patient Name  :  </string>
+    <string name="dentist_name">Dentist Name  :  </string>
+    <string name="service_received">Service Received  :</string> 
+    <string name="covered_cost">Covered Cost  :</string> 
+    <string name="your_cost">Your Cost  :</string>
+    <string name="date_of_service">Date Of Service  :</string>  
+    <string name="pressure">Pressure : </string>
+     <string name="humidity">Humidity :</string>  
+      <string name="wind">Wind :</string>
+      <string name="Home">Home</string>   
+      <string name="find_dentist_near_me">Find Dentist Near Me</string>   
+      <string name="find_dentist_near_address">Find Dentist Near Address</string>   
+      <string name="Benefits_and_Elgiblity">Benefits And Elgiblity</string>   
+      <string name="check_claims">Check Claims</string>    
+      <string name="local_dental_services">Local Dental Services</string>   
+      <string name="logout">Logout</string>    
+        <string name="one_km">1 KM</string>  
+          <string name="two_km">2 KM</string>   
+         
+    
 </resources>

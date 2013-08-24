@@ -1,20 +1,10 @@
 package com.deltadental.android.activities;
 
 
-import com.actionbarsherlock.app.SherlockFragment;
-import com.actionbarsherlock.app.SherlockFragmentActivity;
-import com.deltadental.android.R;
-import android.app.ActionBar;
-import android.app.ActionBar.Tab;
-import android.app.Fragment;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTabHost;
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.View;
-import android.view.ViewGroup;
-import android.app.Activity;
-import android.content.Context;
+
+import com.deltadental.android.R;
  
 public class FindDentistNearAddrActivity extends BaseActivity {
     // Declare Tab Variable

@@ -1,163 +1,153 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    style="@style/matParMatPar"
     android:orientation="vertical" >
-     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+
+    <LinearLayout
+        style="@style/wrapConMatPar"
         android:gravity="center_vertical|left"
         android:orientation="horizontal" >
- 
-        <TextView           
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:singleLine="true" 
-            android:layout_gravity="right"
-            android:text="@string/first_name"/>
+
         <TextView
-            android:id="@+id/txtVwfirtName" 
-           android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" 
-            android:singleLine="true" /> 
-      
-    </LinearLayout>
-    
-      <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:gravity="center_vertical|left"
-        android:orientation="horizontal" >
- 
-        <TextView           
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:singleLine="true" 
-            android:gravity="right"
-             android:text="@string/last_name"/>
-        <TextView
-            android:id="@+id/txtVwLastName" 
-           android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" 
-            android:singleLine="true" />
- 
-      
-    </LinearLayout>
-    
-      <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:gravity="center_vertical|left"
-        android:orientation="horizontal" >
- 
-        <TextView           
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:singleLine="true" 
-            android:gravity="right"
-             android:text="@string/phone"/>
-        <TextView
-            android:id="@+id/txtVwPhone" 
-           android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" 
-            android:singleLine="true" />
- 
-      
-    </LinearLayout>
-      <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:gravity="center_vertical|left"
-        android:orientation="horizontal" >
- 
-        <TextView           
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:singleLine="true" 
-            android:gravity="right"
-            android:text="@string/fax"/>
-        <TextView
-            android:id="@+id/txtVwFax" 
-           android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" 
-            android:singleLine="true" />      
-    </LinearLayout>
-    
-       <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:gravity="center_vertical|left"
-        android:orientation="horizontal" >
- 
-        <TextView           
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:singleLine="true" 
-            android:gravity="right"
-            android:text="@string/speciality"/>
-        <TextView
-            android:id="@+id/txtVwSpeciality" 
-           android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" 
-            android:singleLine="true" />
- 
-      
-    </LinearLayout>
-    
-        <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:gravity="center_vertical|left"
-        android:orientation="horizontal" >
- 
-        <TextView           
-            android:layout_width="0dp"
+            android:layout_width="0dp" 
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="right"
-            android:singleLine="true" 
-            android:text="@string/address"/>
-        <TextView
-            android:id="@+id/txtVwAddress" 
-           android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" 
-            android:singleLine="true" />
- 
-      
-    </LinearLayout>
-    
-             <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:gravity="center_vertical|left"
-        android:orientation="horizontal" >
- 
-        <TextView           
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="right" 
             android:singleLine="true"
-            android:text="@string/zipCode" 
-            />
+            android:text="@string/first_name" />
+
         <TextView
-            android:id="@+id/txtVwZipCode" 
-           android:layout_width="0dp"
+            android:id="@+id/txtVwfirtName"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1" 
+            android:layout_weight="1"
             android:singleLine="true" />
-   
-    </LinearLayout> 
-    
-  </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/wrapConMatPar"
+        android:gravity="center_vertical|left"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:singleLine="true"
+            android:text="@string/last_name" />
+
+        <TextView
+            android:id="@+id/txtVwLastName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:singleLine="true" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/wrapConMatPar"
+        android:gravity="center_vertical|left"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:singleLine="true"
+            android:text="@string/phone" />
+
+        <TextView
+            android:id="@+id/txtVwPhone"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:singleLine="true" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/wrapConMatPar"
+        android:gravity="center_vertical|left"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:singleLine="true"
+            android:text="@string/fax" />
+
+        <TextView
+            android:id="@+id/txtVwFax"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:singleLine="true" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/wrapConMatPar"
+        android:gravity="center_vertical|left"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:singleLine="true"
+            android:text="@string/speciality" />
+
+        <TextView
+            android:id="@+id/txtVwSpeciality"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:singleLine="true" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/wrapConMatPar"
+        android:gravity="center_vertical|left"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:singleLine="true"
+            android:text="@string/address" />
+
+        <TextView
+            android:id="@+id/txtVwAddress"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:singleLine="true" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/wrapConMatPar"
+        android:gravity="center_vertical|left"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:singleLine="true"
+            android:text="@string/zipCode" />
+
+        <TextView
+            android:id="@+id/txtVwZipCode"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:singleLine="true" />
+    </LinearLayout>
+
+</LinearLayout>

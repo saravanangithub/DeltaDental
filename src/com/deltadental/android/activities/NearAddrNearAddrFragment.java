@@ -19,6 +19,7 @@ import com.deltadental.android.exception.LocationException;
 import com.deltadental.android.models.DeltaDentalResponse;
 import com.deltadental.android.services.DeltaDentalService;
 import com.deltadental.android.services.LocationService;
+import com.deltadental.android.utils.KDialog;
 import com.parse.ParseGeoPoint;
 
 public class NearAddrNearAddrFragment extends SherlockFragment {
@@ -46,6 +47,7 @@ public class NearAddrNearAddrFragment extends SherlockFragment {
 					ParseGeoPoint parseGeoPoint=locationService.getLocationByZip(getSherlockActivity(),edtTxtZipCode.getText().toString());
 					if(parseGeoPoint!=null)
 					{
+						KDialog.showLoadingDialog(getSherlockActivity(),"Processing"); 
 					deltaDentalService.getProvidersByNearAddrNearAddr(getSherlockActivity(),parseGeoPoint,new  GetProviderSuccess(), new GetProviderFailure());
 					}
 					 
@@ -67,7 +69,7 @@ public class NearAddrNearAddrFragment extends SherlockFragment {
 		@Override
 		public void invoke(DeltaDentalResponse response) {
 			// TODO Auto-generated method stub
-
+			KDialog.hideLoadingDialog(getSherlockActivity()); 
 			ProviderListAdapter providerListAdapter=new ProviderListAdapter(getSherlockActivity(), response.getProviderAddressList());
 			listVwProviders.setAdapter(providerListAdapter); 
 		}

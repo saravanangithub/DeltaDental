@@ -1,13 +1,11 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent" >
+    style="@style/matParMatPar" >
 
     <TableLayout
-        style="@style/standardTableLayout"
+        style="@style/matParWrapCon"
         android:layout_marginTop="20dip" >
- "
 
-        <TableRow style="@style/standardTableRow" >
+        <TableRow style="@style/matParWrapCon" >
 
             <TextView
                 style="@style/standardTextView"
@@ -16,7 +14,7 @@
 
             <EditText
                 android:id="@+id/edtTxtMemberId"
-                style="@style/standardEditText"
+                style="@style/standardEditText" 
                 android:layout_weight="2" />
 
             <TextView
@@ -26,40 +24,41 @@
 
         <TableRow
             android:id="@+id/tableRow2"
-            style="@style/standardTableRow"
-            android:layout_marginBottom="0dip" 
-            android:gravity="center">
+            style="@style/matParWrapCon"
+            android:layout_marginBottom="0dip"
+            android:gravity="center" >
 
             <TextView
                 style="@style/standardTextView"
                 android:layout_weight="2"
-                android:text="@string/dob" 
-                />
+                android:text="@string/dob" />
 
             <TextView
                 android:id="@+id/txtVwDate"
                 style="@style/standardTextView"
-                android:layout_weight="2"  
+                android:layout_weight="2"
                 android:gravity="center" >
+
                 <requestFocus />
             </TextView>
 
             <ImageButton
                 android:id="@+id/btnDate"
                 android:layout_width="0dip"
-                android:layout_weight="1" 
-                android:layout_height="wrap_content" 
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:contentDescription="@string/date"
                 android:src="@drawable/calendar" />
         </TableRow>
 
-        <TableRow android:layout_marginTop="0dip"  
-                  style="@style/standardTableRow" >
+        <TableRow
+            style="@style/matParWrapCon"
+            android:layout_marginTop="0dip" >
 
             <TextView
                 style="@style/standardTextView"
                 android:layout_weight="2"
-                android:text="@string/ssn" /> 
+                android:text="@string/ssn" />
 
             <EditText
                 android:id="@+id/edtTxtSsn"
@@ -71,7 +70,7 @@
                 android:layout_weight="1" />
         </TableRow>
 
-        <TableRow style="@style/standardTableRow" >
+        <TableRow style="@style/matParWrapCon" >
 
             <TextView
                 style="@style/standardTextView"
@@ -89,9 +88,7 @@
                 android:layout_weight="1" />
         </TableRow>
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
+        <TableRow style="@style/matParWrapCon" >
 
             <TextView
                 style="@style/standardTextView"
@@ -110,8 +107,7 @@
         </TableRow>
 
         <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/matParWrapCon"
             android:gravity="center" >
 
             <Button

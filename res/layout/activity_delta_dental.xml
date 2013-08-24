@@ -1,7 +1,6 @@
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    style="@style/matParMatPar"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -9,7 +8,7 @@
     tools:context=".DeltaDentalActivity" >
 
     <TableRow
-        style="@style/standardTableRow"
+        style="@style/matParWrapCon" 
         android:layout_marginBottom="0dip" >
 
         <ImageView
@@ -19,8 +18,8 @@
             android:src="@drawable/logo_delta_dental" />
     </TableRow>
 
-    <TableRow
-        style="@style/standardTableRow"
+    <TableRow 
+        style="@style/matParWrapCon"
         android:layout_marginBottom="0dip"
         android:layout_marginTop="20dip" >
 
@@ -58,20 +57,20 @@
             android:padding="15dip"
             android:singleLine="true" >
 
-            <TableRow style="@style/standardTableRow" >
+            <TableRow style="@style/matParWrapCon" >
 
                 <EditText android:id="@+id/edtTxtMemberIdLogin" 
                     style="@style/standardEditText"
                     android:layout_weight="3"
                     android:hint="@string/memberId" />
-      "
+      
 
                 <TextView
                     style="@style/invisibleTextView"
                     android:layout_weight="1.5" />
             </TableRow>
 
-            <TableRow style="@style/standardTableRow" >
+            <TableRow style="@style/matParWrapCon" >
 
                 <EditText
                     android:id="@+id/edtTxtPasswordLogin" 
@@ -88,7 +87,7 @@
             </TableRow>
 
             <TableRow
-                style="@style/standardTableRow"
+                style="@style/matParWrapCon" 
                 android:layout_marginTop="10dip" >
 
                 <TextView
@@ -98,7 +97,7 @@
 
                 <Button
                     android:id="@+id/btnRegister"   
-                    style="@style/standardButton"
+                    style="@style/standardButton" 
                     android:layout_weight="1.5"
                     android:text="@string/register" />
             </TableRow>

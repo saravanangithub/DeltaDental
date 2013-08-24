@@ -8,7 +8,7 @@ import java.util.List;
 
 import android.content.Context;
 import android.content.Intent;
-import android.widget.Toast;
+import android.widget.Toast; 
 
 import com.deltadental.android.commons.Closure;
 import com.deltadental.android.models.DeltaDentalResponse;
@@ -51,9 +51,7 @@ public class DeltaDentalService
 		  
 		  ParseUser currentUser = ParseUser.getCurrentUser();
 			 
-			Toast.makeText(context,
-					"current user" + currentUser.getString("username"),
-					Toast.LENGTH_SHORT).show();
+			
 			ParseQuery<ParseObject> parseQuery=ParseQuery.getQuery("MemPersonalInfo");
 			parseQuery.whereEqualTo("MemberId",Integer.parseInt(currentUser.getString("username") ));
 			 parseQuery.findInBackground(new FindCallback<ParseObject>() {
@@ -66,13 +64,11 @@ public class DeltaDentalService
 						  ParseObject parseObject=providersList.get(0);
 						 String userName=parseObject.getString("FirstName")+" "+parseObject.getString("LastName");
 						 
-						 Toast.makeText(context,"thread"+Thread.currentThread().getName(), Toast.LENGTH_SHORT).show(); 
+						 
 						 DeltaDentalResponse deltaDentalResponse=new DeltaDentalResponse();
 						 deltaDentalResponse.setUserName(userName); 
 						 
-							Toast.makeText(context,
-									"user name" + userName, 
-									Toast.LENGTH_SHORT).show();
+							
 						 successClosure.invoke(deltaDentalResponse);
 						}
 					}  });
@@ -179,11 +175,7 @@ public class DeltaDentalService
 			{
 			  DeltaDentalResponse deltaDentalResponse=new DeltaDentalResponse();
 			  deltaDentalResponse.setProviderAddressList(providersList);
-			  for(ParseObject parseObject:providersList)
-			  {
-			      			 
-			  Toast.makeText(context, parseObject.getString("FirstName"), Toast.LENGTH_SHORT).show();
-			  }
+			 
 			  successClosure.invoke(deltaDentalResponse);
 			  }
 		}  });
@@ -207,7 +199,7 @@ public class DeltaDentalService
 			  deltaDentalResponse.setProviderAddressList(providersList);
 			  successClosure.invoke(deltaDentalResponse);
 			 
-			  Toast.makeText(context, parseObject.getString("FirstName"), Toast.LENGTH_SHORT).show();
+			 
 			}
 		}  });
   }
@@ -227,7 +219,7 @@ public class DeltaDentalService
 			{
 			  ParseObject parseObject=providersList.get(0); 
 			 
-			  Toast.makeText(context, parseObject.getString("FirstName"), Toast.LENGTH_SHORT).show();
+			 
 			  
 			  DeltaDentalResponse deltaDentalResponse=new DeltaDentalResponse();
 			  deltaDentalResponse.setProviderAddressList(providersList);

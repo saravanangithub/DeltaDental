@@ -23,7 +23,7 @@ import com.deltadental.android.services.DeltaDentalService;
 import com.deltadental.android.utils.DateTimeUtils;
 import com.deltadental.android.utils.KDialog;
 
-public class RegisterActivity extends Activity 
+public class RegisterActivity extends BaseActivity  
 {
 
   private ImageButton btnDate;
@@ -40,7 +40,7 @@ public class RegisterActivity extends Activity
   private EditText edtTxtSsn;
 
   @Override
-  protected void onCreate(Bundle savedInstanceState) 
+  public void onCreate(Bundle savedInstanceState) 
   {
     super.onCreate(savedInstanceState);
 	setContentView(R.layout.activity_register);
@@ -158,13 +158,5 @@ public class RegisterActivity extends Activity
 	      
 	}
   }
-  
- 	@Override
-  public boolean onCreateOptionsMenu(Menu menu) 
-  {
-		// Inflate the menu; this adds items to the action bar if it is present.
-    getMenuInflater().inflate(R.menu.register, menu);
-		return true;
-  }
-
+   
 }
